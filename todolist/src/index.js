@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './todolist.scss';
 import TodoApp from './ToDo';
 
 

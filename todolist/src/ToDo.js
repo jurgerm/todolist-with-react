@@ -59,7 +59,7 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <h3 className="apptitle">MY TO {this.state.items.length} DO LIST</h3>
+        <h3 className="apptitle">You have {this.state.items.length} Todos</h3>
         <div className="row">
           <div className="col-md-3">
             <TodoList items={this.state.items} onItemCompleted={this.markItemCompleted} onDeleteItem={this.handleDeleteItem} />
@@ -70,7 +70,7 @@ class TodoApp extends React.Component {
             <input type="text" className="form-control" onChange={this.handleTextChange} value={this.state.text} />
           </div>
           <div className="col-md-3">
-            <button className="btn btn-primary" onClick={this.handleAddItem} disabled={!this.state.text}>{"Add #" + (this.state.items.length + 1)}</button>
+            <button className="btn btn-primary" onClick={this.handleAddItem} disabled={!this.state.text}>{"Submit #" + (this.state.items.length + 1)}</button>
           </div>
         </form>
       </div>

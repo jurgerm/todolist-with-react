@@ -1,20 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.apptitle {
-  margin: 1rem 0;
-  color: #ff2968
+h3 {
+  &.apptitle {
+    text-align: center;
+  }
 }
 
 .todolist {
@@ -47,6 +34,10 @@ code {
     }
 
     .btn-danger {
+      background-color: #cfcfcf;
+      border-color: #cfcfcf;
+      border-radius: 10px;
+
       position: absolute;
       top: 0.5rem;
       right: 0.5rem;
