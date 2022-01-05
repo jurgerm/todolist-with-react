@@ -1,7 +1,23 @@
+body {
+  background: white url(./images/fonas.png) repeat;
+}
+
+#root {
+  max-width: 320px;
+  margin: 0 auto;
+  background: white;
+}
+
 h3 {
   &.apptitle {
     text-align: center;
   }
+}
+
+ul,
+li,
+ul li {
+  list-style-type: none;
 }
 
 .todolist {
@@ -10,7 +26,7 @@ h3 {
   .todoitem {
     position: relative;
     margin-bottom: 0.25rem;
-    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     border-top: 1px solid #ccc;
 
     &.done {
@@ -21,11 +37,10 @@ h3 {
     }
 
     &.highlight {
-      border-color: #ff2968;
-      background-color: #ff8fb0;
+      border-color: yellow;
+      background-color: #yellow;
 
-      &:last-child {
-        border-color: #ff2968;
+      &:last-child {       
       }
     }
 
@@ -33,18 +48,11 @@ h3 {
       border-bottom: 1px solid #ccc;
     }
 
-    .btn-danger {
-      background-color: #cfcfcf;
-      border-color: #cfcfcf;
-      border-radius: 10px;
-
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
+    .btn-secondary {
+      border-radius: 50%;
     }
 
     .form-check-label {
-      width: 100%;
 
       .form-check-input {
         margin-right: 1rem;

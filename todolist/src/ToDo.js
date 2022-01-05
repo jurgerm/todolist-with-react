@@ -1,3 +1,6 @@
+/**
+ * @author Jurgita Germanavičienė
+ */
 import React from "react";
 
 class TodoApp extends React.Component {
@@ -60,17 +63,17 @@ class TodoApp extends React.Component {
     return (
       <div>
         <h3 className="apptitle">You have {this.state.items.length} Todos</h3>
-        <div className="row">
-          <div className="col-md-3">
+        <div className="todolist-container">
             <TodoList items={this.state.items} onItemCompleted={this.markItemCompleted} onDeleteItem={this.handleDeleteItem} />
-          </div>
         </div>
         <form className="row">
-          <div className="col-md-3">
-            <input type="text" className="form-control" onChange={this.handleTextChange} value={this.state.text} />
+          <div className="col-md-8">
+            <input type="text" className="form-control" placeholder="Enter item" onChange={this.handleTextChange} value={this.state.text} />
           </div>
-          <div className="col-md-3">
-            <button className="btn btn-primary" onClick={this.handleAddItem} disabled={!this.state.text}>{"Submit #" + (this.state.items.length + 1)}</button>
+          <div className="col-md-4">
+            <button className="btn btn-outline-secondary" onClick={this.handleAddItem} disabled={!this.state.text} 
+              title="{'Submit #' + (this.state.items.length + 1)}"
+            >Submit</button>
           </div>
         </form>
       </div>
@@ -106,12 +109,13 @@ class TodoItem extends React.Component {
   render() {
     var itemClass = "form-check todoitem " + (this.props.completed ? "done" : "undone");
     return (
-      <li className={itemClass} ref={li => this._listItem = li}>
+      <div className={itemClass} ref={li => this._listItem = li}>
         <label className="form-check-label">
-          <input type="checkbox" className="form-check-input" onChange={this.markCompleted} /> {this.props.text}
+          {/* <input type="checkbox" className="form-check-input" onChange={this.markCompleted} />  */}
+          {this.props.text}
         </label>
-        <button type="button" className="btn btn-danger btn-sm" onClick={this.deleteItem}>x</button>
-      </li>
+        <button type="button" className="btn btn-secondary btn-sm float-end" onClick={this.deleteItem}>x</button>
+      </div>
     );
   }
 }
@@ -119,11 +123,11 @@ class TodoItem extends React.Component {
 class TodoList extends React.Component {
   render() {
     return (
-      <ul className="todolist">
+      <div className="todolist">
         {this.props.items.map(item => (
           <TodoItem key={item.id} id={item.id} text={item.text} completed={item.done} onItemCompleted={this.props.onItemCompleted} onDeleteItem={this.props.onDeleteItem} />
         ))}
-      </ul>
+      </div>
     );
   }
 }
